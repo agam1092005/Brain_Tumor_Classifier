@@ -1,0 +1,31 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar {
+  background-color: #607D8B;
+  padding: 10px 0;
+  text-align: center;
+}
+
+#navbar h1 {
+  margin: 0;
+  color: white;
+}
+
+h3 {
+  margin: 20px;
+}
+
+#uploader {
+  border: 2px dashed #ccc;
+  padding: 40px;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 100px;
+}

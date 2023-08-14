@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor Classifier</title>
+    <link href="styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="navbar">
+      <h1>Brain Tumor Classifier</h1>
+    </div>
+    <h3>Upload an CT-Scan / MRI</h3>
+    <div id="uploader">
+      <p>Drag and drop an image file here</p>
+      <p>or</p>
+      <input type="file" id="fileInput" accept="image/*">
+      <button id="cameraButton" disabled>Capture from Camera</button>
+    </div>
+  </body>
+  <script src="script.js"></script>
+  <script type="module" src="model.js"></script>
+</html>
