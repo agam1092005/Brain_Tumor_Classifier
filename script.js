@@ -12,6 +12,7 @@ if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
 
 function handleFileSelect(event) {
   const file = event.target.files[0];
+  console.log(file);
   if (file) {
     uploadFile(file);
   }
