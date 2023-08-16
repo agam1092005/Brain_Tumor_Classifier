@@ -4,6 +4,7 @@ const fileInput = document.getElementById('fileInput');
 const cameraButton = document.getElementById('cameraButton');
 const submitButton = document.getElementById('submitButton');
 
+
 fileInput.addEventListener('change', handleFileSelect);
 
 if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
@@ -17,6 +18,7 @@ function showImage(file) {
   imageBlock.src = URL.createObjectURL(file);
   document.getElementsByTagName("body")[0].appendChild(imageBlock);
 }
+
 
 function handleFileSelect(event) {
   const file = event.target.files[0];
@@ -59,20 +61,25 @@ function uploadFile(file) {
   // You might want to use XMLHttpRequest or fetch to perform the actual upload.
   // This is a simplified example.
   const formData = new FormData();
-  formData.append('uploadedFile', file);
+  formData.append('file', file);
 
   fetch('http://127.0.0.1:8000/predict', {
     method: 'POST',
-    body: formData
+    body: formData,
   })
   .then(response => response.json())
   .then(data => {
-    console.log("Data Path: ", data.path);
-    console.log("Data: ", data);
+    console.log(data);
   })
   .catch(error => {
-    console.log(error);
-  })
+    console.error('Error:', error);
+  });
+
+  var detailsBlock = document.createElement("div");
+  detailsBlock.innerHTML = formData;
+  detailsBlock.classList.add("displayDetails");
+  document.getElementsByTagName("body")[0].appendChild(detailsBlock);
+
 }
 
 function uploadCapturedImage(imageData) {
