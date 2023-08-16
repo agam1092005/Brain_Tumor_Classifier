@@ -35,3 +35,12 @@ h3 {
   max-width: 350px;
   height: 350px;
 }
+
+.displayDetails {
+  size: 10px;
+  color: black;
+}
+
+#submitButton {
+  margin-top: 20px;
+}
