@@ -22,6 +22,11 @@ h3 {
   margin: 20px;
 }
 
+#server {
+  margin: 30px 20px;
+  float: right;
+}
+
 #uploader {
   border: 2px dashed #ccc;
   padding: 40px;
@@ -30,17 +35,42 @@ h3 {
   margin: 0 100px;
 }
 
-.displayImage {
+#displayImage {
+  float:left;
   margin: 100px;
-  max-width: 350px;
+  width: 350px;
   height: 350px;
-}
-
-.displayDetails {
-  size: 10px;
-  color: black;
 }
 
 #submitButton {
   margin-top: 20px;
+}
+
+#classDetails {
+  float:middle;
+  margin-top: 100px;
+}
+
+#cautionBlock {
+  color: maroon;
+}
+
+.HighConfidence {
+  float:middle;
+  color: green;
+}
+
+.MediumConfidence {
+  float:middle;
+  color: #F6BE00;
+}
+
+.LowConfidence {
+  float:middle;
+  color: maroon;
+}
+
+p {
+  margin: 10px 100px;
+  white-space: normal;
 }
