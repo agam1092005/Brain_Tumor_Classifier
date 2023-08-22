@@ -10,16 +10,21 @@
   <body>
     <div id="navbar">
       <h1>Brain Tumor Classifier</h1>
+      <h4 id="server"></h4>
     </div>
     <h3>Upload an CT-Scan / MRI</h3>
     <form id="uploader" type="submit" method="POST" onsubmit="return false">
       <p>Drag and drop an image file here</p>
-      <p>or</p>
+      <br>
       <input type="file" id="fileInput" accept="image/*">
-      <button id="cameraButton" disabled>Capture from Camera</button>
       <br>
       <button type="submit" id="submitButton">Predict</button>
     </form>
+    <img id="displayImage">
+    <h1 id="classDetails"></h1>
+    <h3 id="confidenseBlock"></h3>
+    <p id="Details"></p>
+    <p id="cautionBlock"></p>
+  </body>  
   <script src="script.js"></script>
 </html>
-
