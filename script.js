@@ -1,24 +1,36 @@
+fetch('http://127.0.0.1:8000/ping', {
+})
+.then(response => {
+  console.log(response);
+  document.getElementById('server').innerHTML = "PREDICTION MODEL SERVER IS ON";
+  document.getElementById('server').style.color = "green";
+})
+.catch(e=>{
+  console.log(e);
+  document.getElementById('server').innerHTML = "PREDICTION MODEL SERVER IS OFF";
+  document.getElementById('server').style.color = "red";
+  document.getElementById("fileInput").disabled = true;
+  document.getElementById("submitButton").disabled = true;
+  });
 
 const uploader = document.getElementById('uploader');
 const fileInput = document.getElementById('fileInput');
-const cameraButton = document.getElementById('cameraButton');
 const submitButton = document.getElementById('submitButton');
-
+var imageBlock = document.getElementById('displayImage');
+var classBlock = document.getElementById('classDetails');
+var confidenseBlock = document.getElementById('confidenseBlock');
+var DetailBlock = document.getElementById('Details');
+var cautionBlock = document.getElementById('cautionBlock');
 
 fileInput.addEventListener('change', handleFileSelect);
 
-if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
-  cameraButton.removeAttribute('disabled');
-  cameraButton.addEventListener('click', captureFromCamera);
-}
-
 function showImage(file) {
-  const imageBlock = document.createElement("img");
-  imageBlock.classList.add("displayImage");
+  classBlock.innerHTML = '';
+  confidenseBlock.innerHTML = '';
+  DetailBlock.innerHTML = '';
+  cautionBlock.innerHTML = '';
   imageBlock.src = URL.createObjectURL(file);
-  document.getElementsByTagName("body")[0].appendChild(imageBlock);
 }
-
 
 function handleFileSelect(event) {
   const file = event.target.files[0];
@@ -32,36 +44,9 @@ function handleFileSelect(event) {
 }
 
 
-function captureFromCamera() {
-  navigator.mediaDevices.getUserMedia({ video: true })
-    .then(stream => {
-      const video = document.createElement('video');
-      video.srcObject = stream;
-      video.autoplay = true;
-      video.addEventListener('click', () => {
-        const canvas = document.createElement('canvas');
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
-        const context = canvas.getContext('2d');
-        context.drawImage(video, 0, 0, canvas.width, canvas.height);
-        const capturedImage = canvas.toDataURL('image/jpeg');
-        uploadCapturedImage(capturedImage);
-        video.srcObject.getTracks().forEach(track => track.stop());
-      });
-      uploader.innerHTML = '';
-      uploader.appendChild(video);
-    })
-    .catch(error => {
-      console.error('Error accessing camera:', error);
-    });
-}
-
 function uploadFile(file) {
-  // Here, you can implement the code to upload the selected file to your server.
-  // You might want to use XMLHttpRequest or fetch to perform the actual upload.
-  // This is a simplified example.
   const formData = new FormData();
-  formData.append('file', file);
+  formData.set('file', file);
 
   fetch('http://127.0.0.1:8000/predict', {
     method: 'POST',
@@ -69,22 +54,43 @@ function uploadFile(file) {
   })
   .then(response => response.json())
   .then(data => {
-    console.log(data);
+    detail = '';
+    Pred = '';
+    if (String(data['class']) == 'glioma') {
+      detail = 'Gliomas are cancerous brain tumours that start in glial cells. These are the supporting cells of the brain and the spinal cord. This type of tumour grows and spreads rapidly, often creating pressure.';
+      Pred = 'Glioma detected';
+    }
+    else if (String(data['class']) == 'meningioma') {
+      detail = 'Meningiomas are one of the most common forms of brain tumors, accounting for roughly 20% of brain tumors. They commonly form in areas populated with heavy amounts of arachnoid villi (located in the second layer which covers the brain).';
+      Pred = 'Meningioma detected';
+    }
+    else if (String(data['class']) == 'pituitary') {
+      detail = 'Pituitary tumors are unusual growths that develop in the pituitary gland. This gland is an organ about the size of a pea. It\'s located behind the nose at the base of the brain. Some of these tumors cause the pituitary gland to make too much of certain hormones that control important body functions.';
+      Pred = 'Pituitary Tumor detected'; 
+    }
+    else {
+      detail = 'This prediction model is for project. In rare cases, it can be wrong.';
+      Pred = 'No Tumor detected';
+    }
+    
+    confi = '';
+    if ((data['confidence'] * 100) > 75) {
+      confi = 'HighConfidence';
+    }
+    else if (50 < (data['confidence'] * 100) < 75) {
+      confi = 'MediumConfidence';
+    }
+    else {
+      confi = 'LowConfidence';
+    }
+
+    classBlock.innerHTML = Pred;
+    DetailBlock.innerHTML = detail;
+    cautionBlock.innerHTML = 'CAUTION - Although this prediction model is overall ~ 98% accurate, we would still recommened you to go to your doctor for confirmation if you believe to have any symptoms of brain tumor.';
+    confidenseBlock.innerHTML = (data['confidence'] * 100 + '%');
+    confidenseBlock.classList.add(confi);
   })
   .catch(error => {
     console.error('Error:', error);
   });
-
-  var detailsBlock = document.createElement("div");
-  detailsBlock.innerHTML = formData;
-  detailsBlock.classList.add("displayDetails");
-  document.getElementsByTagName("body")[0].appendChild(detailsBlock);
-
-}
-
-function uploadCapturedImage(imageData) {
-  // Here, you can implement the code to upload the captured image data to your server.
-  // You might want to use XMLHttpRequest or fetch to perform the actual upload.
-  // This is a simplified example.
-  console.log('Uploading captured image:', imageData);
 }
