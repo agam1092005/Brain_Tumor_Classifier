@@ -27,6 +27,8 @@ Jupyter notebook
 3. Click predict
 
 ## Visuals:
+#### To see all visuals, go to visuals folder
+
 Accuracy and Loss graph
 ![graph](https://github.com/agam1092005/Brain_Tumor_Classifier/assets/70815441/22b1b811-566e-428c-9eaf-61b4eacd2180)
 
