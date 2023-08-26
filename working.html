@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+    <title>Model's Working</title>
+    <style>
+        body {
+            margin: 20px;
+        }
+
+        p {
+            padding: 20px;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Brain Tumor Classifier</h1>
+    <a href="https://medium.com/@RaghavPrabhu/understanding-of-convolutional-neural-network-cnn-deep-learning-99760835f148">
+        <h3>About CNN (Convolutional Neural Network) (source: medium.com)</h3>
+    </a>
+    <p>
+        We are using CNN (Convolutional Neural Network) model, we can predict weather a person has tumor (3 types) or not by submitting a image of CT-Scan or MRI.
+        <br>
+        But what is CNN ?
+        <br>
+        Deep learning CNN models to train and test, each input image will pass it through a series of convolution layers with filters (Kernals), Pooling, fully connected layers (FC) and apply Softmax function to classify an object with probabilistic values between 0 and 1.
+        <br>
+        In simple language, CNN image classifications takes an input image, process it and classify it under certain categories.
+    </p>
+    <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*XbuW8WuRrAY5pC4t-9DZAQ.jpeg">
+
+    <h3>Layers</h3>
+    <p>
+        CNN model works on layers.
+        <br>
+        Convolution is the first layer to extract features from an input image. Convolution of an image with different filters can perform operations such as edge detection, blur and sharpen by applying filters.
+        <br>
+        ReLU stands for Rectified Linear Unit for a non-linear operation. The output is ƒ(x) = max(0,x). Why ReLU is important: ReLU's purpose is to introduce non-linearity in our ConvNet. Since, the real world data would want our ConvNet to learn would be non-negative linear values.
+        <br>
+        Pooling layers section would reduce the number of parameters when the images are too large. Spatial pooling also called subsampling or downsampling which reduces the dimensionality of each map but retains important information. Spatial pooling can be of different types:
+        <ul>
+            <li>Max Pooling</li>
+            <li>Average Pooling</li>
+            <li>Sum Pooling</li>
+        </ul>
+        <br>
+        Then comes Fully Connected Layer, we flattened our matrix into vector and feed it into a fully connected layer like a neural network.
+        <img src="https://miro.medium.com/v2/resize:fit:1108/format:webp/1*Mw6LKUG8AWQhG73H1caT8w.png">
+    </p>
+    <h3>What are we doing ?</h3>
+    <p>
+        First we import all the required decrepancies, model and dataset.
+        <br>
+        Dataset is then prepared into batches (in this case 32 images per batch) of size 256x256. Any image of other size is rescaled & resized to 256x256 so that model doesn't read any wrong patterns.
+        <br>
+        Training data is split into training, validation and testing data. We used standard convention and split data in ratio 8:1:1 (That means 80% data is given to the model for training and looking for patterns in all the layers, 10% for validation and 10% for evaluation of the model).
+        <br>
+        Then we fit the data to the model in the batch size of 32 images.
+        <br>
+        Then we use different hyperparameters and Layers to increase the accuracy of the model.
+        <br>
+        Model is then evaluated on the 10% test data.
+        <br>
+        <br>
+        Our Model Accuracy - 98.51973652839661%
+        <br>
+    </p>
+  </body>  
+</html>
