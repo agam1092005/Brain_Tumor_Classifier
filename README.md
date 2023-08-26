@@ -2,7 +2,7 @@
 
 This is a machine learning project. Using CNN (Convolutional Neural Network) model, we can predict weather a person has tumor (3 types) or not by submitting a image of CT-Scan or MRI.
 
-# Model Accuracy - 98.51973652839661%
+## Model Accuracy - 98.51973652839661%
 Model Loss - 06.401616334915161%
 
 Dependencies:
