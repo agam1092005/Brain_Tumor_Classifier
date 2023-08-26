@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
     <title>Brain Tumor Classifier</title>
-    <link href="styles.css" rel="stylesheet">
+    <link href="../statics/styles.css" rel="stylesheet">
   </head>
   <body>
     <div id="navbar">
@@ -21,10 +21,45 @@
       <button type="submit" id="submitButton">Predict</button>
     </form>
     <img id="displayImage">
-    <h1 id="classDetails"></h1>
+    <h1 id="detection"></h1>
+    <h2 id="classDetails"></h2>
     <h3 id="confidenseBlock"></h3>
     <p id="Details"></p>
     <p id="cautionBlock"></p>
+    <h3 id="scroll"></h3>
+    <table id="descTable">
+      <tr>
+        <th>
+          Symptoms
+        </th>
+        <th>
+          Causes
+        </th>
+        <th>
+          Treatments
+        </th>
+      </tr>
+      <tr>
+        <td id="sym1"></td>
+        <td id="cause1"></td>
+        <td id="treat1"></td>
+      </tr>
+      <tr>
+        <td id="sym2"></td>
+        <td id="cause2"></td>
+        <td id="treat2"></td>
+      </tr>
+      <tr>
+        <td id="sym3"></td>
+        <td id="cause3"></td>
+        <td id="treat3"></td>
+      </tr>
+      <tr>
+        <td id="sym4"></td>
+        <td id="cause4"></td>
+        <td id="treat4"></td>
+      </tr>
+    </table>
   </body>  
-  <script src="script.js"></script>
+  <script src="../statics/script.js"></script>
 </html>
