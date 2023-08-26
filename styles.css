@@ -37,7 +37,7 @@ h3 {
 
 #displayImage {
   float:left;
-  margin: 100px;
+  margin: 50px 100px;
   width: 350px;
   height: 350px;
 }
@@ -46,31 +46,49 @@ h3 {
   margin-top: 20px;
 }
 
+#detection {
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
 #classDetails {
   float:middle;
-  margin-top: 100px;
+  margin: 10px;
 }
 
 #cautionBlock {
   color: maroon;
+  margin: 10px;
 }
 
-.HighConfidence {
+#confidenseBlock {
   float:middle;
-  color: green;
-}
-
-.MediumConfidence {
-  float:middle;
-  color: #F6BE00;
-}
-
-.LowConfidence {
-  float:middle;
-  color: maroon;
+  margin: 10px;
 }
 
 p {
   margin: 10px 100px;
   white-space: normal;
+}
+
+#descTable {
+  display: none;
+  float: left;
+}
+
+table {
+  border-collapse: collapse !important;
+  margin: 0px 100px 50px 100px;
+  width: 60%;
+  border: 1px solid grey;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid grey;
+}
+
+th {
+  background-color: #e8e8e8;
 }
