@@ -32,11 +32,14 @@ Jupyter notebook
 Accuracy and Loss graph
 ![graph](https://github.com/agam1092005/Brain_Tumor_Classifier/assets/70815441/22b1b811-566e-428c-9eaf-61b4eacd2180)
 
-Layers Heatmap
-![layer_heatmap](https://github.com/agam1092005/Brain_Tumor_Classifier/assets/70815441/667fe6df-740b-4007-9266-a225b1c023f7)
-
 Sample Predictions
 ![sample_predictions](https://github.com/agam1092005/Brain_Tumor_Classifier/assets/70815441/67f27452-c0dc-4157-807e-afbb57649715)
+
+Real Prediction (DEMO)
+<img width="1470" alt="prediction" src="https://github.com/agam1092005/Brain_Tumor_Classifier/assets/70815441/192a900c-309a-499e-9e9b-bd6251630aca">
+
+Layers Heatmap
+![layer_heatmap](https://github.com/agam1092005/Brain_Tumor_Classifier/assets/70815441/667fe6df-740b-4007-9266-a225b1c023f7)
 
 
 
