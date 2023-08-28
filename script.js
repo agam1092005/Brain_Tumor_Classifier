@@ -156,7 +156,7 @@ function uploadFile(file) {
     if ((data['confidence'] * 100) > 75) {
       confidenseBlock.style.color = 'green';
     }
-    else if (50 < (data['confidence'] * 100) < 75) {
+    else if ((data['confidence'] * 100) > 50) {
       confidenseBlock.style.color = '#FFD300';
     }
     else {
