@@ -35,6 +35,11 @@ The 5-year relative survival rate for people younger than age 15 is about 75%. F
 ## Dataset:
 https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset
 
+## Data Split
+80% Training data
+10% Validation data
+10% Test data
+
 ## Dependencies:
 1. Tensorflow
 2. Keras
