@@ -53,8 +53,9 @@ Jupyter notebook
 
 ## How to run
 1. Go to https://agam1092005.github.io/Brain_Tumor_Classifier/
-2. Upload CT-Scan/MRI (you can get sample images from testing folder)
-3. Click predict
+2. Check if server is on
+3. Upload CT-Scan/MRI (you can get sample images from testing folder)
+4. Click predict
 
 ## Visuals:
 ### To see all visuals, go to visuals folder
