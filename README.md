@@ -36,9 +36,9 @@ The 5-year relative survival rate for people younger than age 15 is about 75%. F
 https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset
 
 ## Data Split
-80% Training data
-10% Validation data
-10% Test data
+* 80% Training data
+* 10% Validation data
+* 10% Test data
 
 ## Dependencies:
 1. Tensorflow
@@ -73,9 +73,8 @@ Layers Heatmap
 
 
 ## Evaluation
-Model Accuracy - 98.51973652839661%
-
-Model Loss - 06.401616334915161%
+* Model Accuracy - 98.51973652839661%
+* Model Loss - 06.401616334915161%
 
 
 
