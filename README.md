@@ -57,26 +57,21 @@ Jupyter notebook
 3. Upload CT-Scan/MRI (you can get sample images from testing folder)
 4. Click predict
 
+## Evaluation (At 25 EPOCHS)
+* Model Accuracy - 96.18611931800842 %
+* Model Loss - 23.621788620948792 %
+
 ## Visuals:
 ### To see all visuals, go to visuals folder
 
 Accuracy and Loss graph
-![graph](https://github.com/agam1092005/Brain_Tumor_Classifier/assets/70815441/22b1b811-566e-428c-9eaf-61b4eacd2180)
+![graph](https://github.com/agam1092005/Brain_Tumor_Classifier/assets/70815441/0c2a2dec-f289-4684-9493-02db53d4bb5e)
 
 Sample Predictions
-![sample_predictions](https://github.com/agam1092005/Brain_Tumor_Classifier/assets/70815441/67f27452-c0dc-4157-807e-afbb57649715)
+![sample_predictions](https://github.com/agam1092005/Brain_Tumor_Classifier/assets/70815441/b72ced4c-ef64-4d40-8fb9-363fc50b8126)
 
 Real Prediction (DEMO)
 <img width="1470" alt="prediction" src="https://github.com/agam1092005/Brain_Tumor_Classifier/assets/70815441/192a900c-309a-499e-9e9b-bd6251630aca">
 
 Layers Heatmap
-![layer_heatmap](https://github.com/agam1092005/Brain_Tumor_Classifier/assets/70815441/667fe6df-740b-4007-9266-a225b1c023f7)
-
-
-## Evaluation (At 25 EPOCHS)
-* Model Accuracy - 96.18611931800842 %
-* Model Loss - 23.621788620948792 %
-
-
-
-
+![layer_heatmap](https://github.com/agam1092005/Brain_Tumor_Classifier/assets/70815441/10ddab9a-018d-4b07-990f-78220c3a550a)
