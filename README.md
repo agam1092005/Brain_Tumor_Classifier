@@ -73,9 +73,9 @@ Layers Heatmap
 ![layer_heatmap](https://github.com/agam1092005/Brain_Tumor_Classifier/assets/70815441/667fe6df-740b-4007-9266-a225b1c023f7)
 
 
-## Evaluation
-* Model Accuracy - 98.51973652839661%
-* Model Loss - 06.401616334915161%
+## Evaluation (At 25 EPOCHS)
+* Model Accuracy - 96.18611931800842 %
+* Model Loss - 23.621788620948792 %
 
 
 
