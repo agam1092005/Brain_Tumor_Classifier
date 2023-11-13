@@ -178,7 +178,7 @@ function uploadFile(file) {
     treats2.innerHTML = treat2;
     treats3.innerHTML = treat3;
     treats4.innerHTML = treat4;
-    cautionBlock.innerHTML = 'CAUTION - Although this prediction model is overall ~ 98% accurate, we would still recommened you to go to your doctor for confirmation if you believe to have any symptoms of brain tumor.';
+    cautionBlock.innerHTML = 'CAUTION - Although this prediction model is overall ~ 96% accurate, we would still recommened you to go to your doctor for confirmation if you believe to have any symptoms of brain tumor.';
     confidenseBlock.innerHTML = (data['confidence'] * 100 + '%');
   })
   .catch(error => {
